@@ -2,15 +2,20 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}", // agar src folder hai
+    "./app/**/*.{js,ts,jsx,tsx,mdx}", // agar direct root app/ hai
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        dusk: {
+          dark: "var(--color-dusk-dark)",
+          primary: "var(--color-dusk-primary)",
+          accent: "var(--color-dusk-accent)",
+          light: "var(--color-dusk-light)",
+        },
       },
     },
   },
