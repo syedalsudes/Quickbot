@@ -73,7 +73,7 @@ export default function FAQSection() {
                 >
                   <div className="flex items-start gap-4 md:gap-6">
                     <span
-                      className={`text-xs font-mono font-bold px-2.5 py-1 rounded-lg mt-0.5 shrink-0 ${
+                      className={`text-xs font-mono font-bold px-2.5 py-1 rounded-lg mt-0.5 shrink-0 transition-colors duration-300 ${
                         isOpen
                           ? "bg-dusk-dark text-dusk-accent"
                           : "bg-dusk-dark/5 text-dusk-primary"
@@ -93,26 +93,30 @@ export default function FAQSection() {
                   </div>
 
                   <div
-                    className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 border-2 transition-all duration-300 ${
+                    className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 border-2 transition-all duration-300 transform ${
                       isOpen
                         ? "bg-dusk-dark border-dusk-dark text-dusk-accent rotate-45"
-                        : "bg-dusk-light border-dusk-dark/20 text-dusk-dark"
+                        : "bg-dusk-light border-dusk-dark/20 text-dusk-dark rotate-0"
                     }`}
                   >
                     <Plus className="w-5 h-5 stroke-[2.5]" />
                   </div>
                 </button>
 
-                {/* Animated Dropdown Body */}
-                {isOpen && (
-                  <div className="px-6 pb-6 md:px-8 md:pb-8 pt-0 ml-0 md:ml-16">
+                {/* Smooth Animated Grid Dropdown */}
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100 pb-6 md:pb-8" : "grid-rows-[0fr] opacity-0 pb-0"
+                  }`}
+                >
+                  <div className="overflow-hidden px-6 md:px-8 ml-0 md:ml-16">
                     <div className="border-t border-dusk-dark/10 pt-4">
                       <p className="text-sm md:text-base text-dusk-primary font-medium leading-relaxed">
                         {faq.a}
                       </p>
                     </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
