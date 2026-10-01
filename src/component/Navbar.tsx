@@ -16,7 +16,11 @@ export default function Navbar() {
     ];
 
     return (
-        <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
+        <header 
+            className={`absolute top-0 left-0 w-full z-50 transition-colors duration-200 ${
+                isOpen ? 'bg-white shadow-sm md:bg-transparent md:shadow-none' : 'bg-transparent'
+            }`}
+        >
             <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                 {/* Brand / Logo */}
                 <Link href="/" className="group flex items-center">
@@ -71,7 +75,7 @@ export default function Navbar() {
 
             {/* Mobile Dropdown Menu / Drawer */}
             {isOpen && (
-                <div className="absolute top-20 left-0 w-full bg-white/90 backdrop-blur-2xl border-b border-dusk-dark/10 shadow-2xl px-6 py-8 flex flex-col gap-6 md:hidden transition-all animate-in fade-in slide-in-from-top-4 duration-200 z-50">
+                <div className="absolute top-20 left-0 w-full bg-white border-b border-dusk-dark/10 shadow-2xl px-6 py-8 flex flex-col gap-6 md:hidden transition-all animate-in fade-in slide-in-from-top-4 duration-200 z-50">
                     <div className="flex flex-col gap-4">
                         {navLinks.map((link) => (
                             <Link
