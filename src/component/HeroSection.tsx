@@ -6,7 +6,8 @@ import {
     Play,
     Zap,
     PhoneOff,
-    Bot
+    Bot,
+    LayoutDashboard
 } from 'lucide-react';
 
 export default function HeroSection() {
@@ -62,12 +63,13 @@ export default function HeroSection() {
                     {/* Action Area */}
                     <div className="space-y-4 pt-1">
                         <div className="flex flex-wrap items-center gap-4">
-                            <Link
-                                href="/create"
-                                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-dusk-dark text-dusk-accent text-sm font-bold shadow-xl shadow-dusk-dark/20 hover:bg-dusk-primary active:scale-[0.98] transition-all duration-200"
+                             <Link
+                                href="/dashboard"
+                                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-dusk-dark text-dusk-accent text-sm font-bold shadow-xl shadow-dusk-dark/20 hover:bg-dusk-primary hover:text-white active:scale-[0.98] transition-all duration-200"
                             >
-                                <span>Start 7-Day Free Trial</span>
-                                <ArrowRight className="w-4 h-4" />
+                                <LayoutDashboard className="w-4 h-4" />
+                                <span>Go to Dashboard</span>
+                                <ArrowRight className="w-4 h-4 ml-1" />
                             </Link>
 
                             <Link
